@@ -10,12 +10,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
     @GetMapping("hello-mvc")
-    @ResponseBody // view resolver(template) 파일 사용 안함
+    @ResponseBody // view resolver -> HttpMessageConverter 사용
     public String HelloMvc(
-            @RequestParam("name") String name,
-            Model model
+            @RequestParam("name") String name
     ) {
-        model.addAttribute("name", name);
-        return "hello-template  " + name;
+        Hello hello = new Hello();
+        hello.setName("test");
+        return "hello-template  " + hello.getName();
+    }
+
+    public class Hello {
+        private String name;
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
