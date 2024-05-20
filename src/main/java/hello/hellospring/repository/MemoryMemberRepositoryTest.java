@@ -3,7 +3,9 @@
 //import hello.hellospring.domain.Member;
 //import org.junit.jupiter.api.AfterEach;
 //import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
 //
+//@SpringBootTest
 //public class MemoryMemberRepositoryTest {
 //
 //    MemoryMemberRepository repository = new MemoryMemberRepository();
